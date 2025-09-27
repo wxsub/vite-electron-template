@@ -1,0 +1,70 @@
+{
+  "name": "vite-electron-template",
+  "version": "1.0.0",
+  "description": "Vite Electron Template is a lightweight, high-performance desktop application development framework built using mainstream frontend technologies such as TypeScript, ElementPlus, Tailwindcss, Vue3, and Electron. This framework integrates functional modules including a file routing system, automated component library, and MockJs simulation tool.",
+  "author": {
+    "name": "wxsub.com studios © 2023",
+    "email": "developer@example.com"
+  },
+  "main": "main/main.js",
+  "productName": "vite-electron-template",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "build": "node scripts/build.js && electron-builder",
+    "build:dir": "node scripts/build.js && electron-builder --dir -c electron-builder.json",
+    "build:win": "node scripts/build.js && electron-builder --win",
+    "build:mac": "node scripts/build.js && electron-builder --mac",
+    "build:linux": "node scripts/build.js && electron-builder --linux",
+    "deploy": "node scripts/deploy.js"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.195",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/parser": "^5.59.6",
+    "@vitejs/plugin-vue": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "electron": "19.1.9",
+    "electron-builder": "23.6.0",
+    "less": "^4.4.0",
+    "minio": "^8.0.5",
+    "sass": "^1.90.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-icons": "^0.16.1",
+    "unplugin-vue-components": "^0.24.1",
+    "vite": "^4.5.0",
+    "vite-plugin-restart": "^0.4.2",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-tsc": "^2.1.10",
+    "walk": "^2.3.15"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "electron-updater": "^6.6.2",
+    "element-plus": "^2.10.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.33",
+    "vite-plugin-pages": "^0.32.4",
+    "vite-plugin-vue-meta-layouts": "^0.5.1",
+    "vue": "^3.3.8",
+    "vue-router": "^4.5.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron"
+    ]
+  },
+  "repository": "https://github.com/wxsub/vite-element-template.git",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

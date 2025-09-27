@@ -1,0 +1,8 @@
+@use "sass:map";
+
+@mixin scrollbar {
+  overflow-y: auto;
+  &::-webkit-scrollbar { width: 2px; height: 6px }
+  &::-webkit-scrollbar-thumb { background: #999999; border-radius: 6px }
+  &::-webkit-scrollbar-track { background: transparent }
+}

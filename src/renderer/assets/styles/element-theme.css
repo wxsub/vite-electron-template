@@ -1,0 +1,20 @@
+/* Element Plus 主题色配置 - 绿色主题 */
+:root {
+  /* 主色调 - 绿色 */
+  --el-color-primary: #116254;
+  --el-color-primary-light-3: #116254;
+  --el-color-primary-light-5: #6ee7b7;
+  --el-color-primary-light-7: #a7f3d0;
+  --el-color-primary-light-8: #d1fae5;
+  --el-color-primary-light-9: #ecfdf5;
+  --el-color-primary-dark-2: #059669;
+
+  /* 成功色也使用绿色系 */
+  --el-color-success: #116254;
+  --el-color-success-light-3: #116254;
+  --el-color-success-light-5: #6ee7b7;
+  --el-color-success-light-7: #a7f3d0;
+  --el-color-success-light-8: #d1fae5;
+  --el-color-success-light-9: #ecfdf5;
+  --el-color-success-dark-2: #059669;
+}
