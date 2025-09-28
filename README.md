@@ -1,4 +1,8 @@
-### 准备
+# vite-electron-template
+
+Vite Electron Template 是一款基于主流前端技术（如 TypeScript、ElementPlus、Tailwindcss、Vue3 和 Electron）构建的轻量级高性能桌面应用开发框架。该框架集成了文件路由系统、自动化组件库及 MockJs 模拟工具等功能模块。
+
+**项目node版本不低于18.0.0**
 
 1. 安装python
 安装路径`lib/python-3.11.9-amd64.exe`
