@@ -8,6 +8,7 @@ import {
 } from 'vue-router'
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
+import defaultSettings from "@/config/setting"
 
 NProgress.configure({ showSpinner: false })
 
@@ -24,6 +25,13 @@ router.beforeEach(async (to: RouteLocationNormalized, _from: RouteLocationNormal
 
   const { meta, query } = to || {},
     { hash, title } = meta || {};
+
+  const width = (meta && meta.windowWidth) || defaultSettings.windowWidth;
+  const height = (meta && meta.windowHeight) || defaultSettings.windowHeight;
+  
+  if (typeof window !== 'undefined' && (window as any).electronWindow) {
+    (window as any).electronWindow.resizeWindow(width, height);
+  }
 
   next()
 })

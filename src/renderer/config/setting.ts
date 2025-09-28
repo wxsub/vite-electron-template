@@ -1,5 +1,7 @@
 interface DefaultSettings {
     title: string;  // system title
+    windowWidth: number;
+    windowHeight: number;
     header: string,
     language: "zh-cn" | "en",  // language, default is en
     layout: string;
@@ -9,6 +11,8 @@ interface DefaultSettings {
 
 const defaultSettings: DefaultSettings = {
     title: "vite-electron-template",
+    windowWidth: 375,
+    windowHeight: 670,
     header: "60px",
     language: "en",  // default language, you can set more languages in the app store
     layout: "left",

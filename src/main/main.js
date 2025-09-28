@@ -8,6 +8,8 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: x,
     height: y,
+    minWidth: 200,
+    minHeight: 200,
     resizable: false,
     frame: false,
     webPreferences: {
@@ -54,7 +56,26 @@ ipcMain.on("minimize", () => {
 })
 
 ipcMain.on("close", () => {
-  app.quit()
+  app.quit();
+})
+
+ipcMain.on("resize-window", (event, { width, height }) => {
+  if (mainWindow && width && height) {
+    const [currentX, currentY] = mainWindow.getPosition();
+    
+    const wasResizable = mainWindow.isResizable();
+    mainWindow.setResizable(true);
+    
+    mainWindow.setSize(width, height);
+    mainWindow.setPosition(currentX, currentY);
+    
+    mainWindow.setResizable(wasResizable);
+    
+    mainWindow.webContents.executeJavaScript('window.dispatchEvent(new Event("resize"))');
+    
+    x = width;
+    y = height;
+  }
 })
 
 app.on('window-all-closed', function () {

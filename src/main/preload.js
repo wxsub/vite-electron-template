@@ -23,3 +23,9 @@ contextBridge.exposeInMainWorld('electronCREATED', {
     ipcRenderer.on('refresh-meeting-list', (event, data) => callback(data));
   }
 })
+
+contextBridge.exposeInMainWorld('electronWindow', {
+  resizeWindow: (width, height) => {
+    ipcRenderer.send('resize-window', { width, height });
+  }
+})
