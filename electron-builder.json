@@ -1,80 +1,50 @@
 {
-    "appId": "com.electron.app",
-    "productName": "KingSchoolMeeting",
-    "directories": {
-        "output": "dist"
+  "appId": "com.electron.app",
+  "productName": "vite-electron-template",
+  "directories": {
+    "output": "dist"
+  },
+  "icon": "icon/icon.ico",
+  "electronDownload": {
+    "cache": "./cache",
+    "mirror": "https://npmmirror.com/mirrors/electron/"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "shortcutName": "vite-electron-template",
+    "installerIcon": "icon/icon.ico",
+    "uninstallerIcon": "icon/icon.ico",
+    "installerHeaderIcon": "icon/icon.ico"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": ["snap"],
+    "icon": "icon/icon.svg"
+  },
+  "mac": {
+    "icon": "icon/icon.icns"
+  },
+  "files": [
+    {
+      "from": "build/main",
+      "to": "main",
+      "filter": ["**/*"]
     },
-    "icon": "icon/icon.ico",
-    "electronDownload": {
-        "cache": "./cache",
-        "mirror": "https://npmmirror.com/mirrors/electron/"
+    {
+      "from": "build/renderer",
+      "to": "renderer",
+      "filter": ["**/*"]
     },
-    "nsis": {
-        "oneClick": false,
-        "perMachine": false,
-        "allowToChangeInstallationDirectory": true,
-        "shortcutName": "vite-electron-template",
-        "installerIcon": "icon/icon.ico",
-        "uninstallerIcon": "icon/icon.ico",
-        "installerHeaderIcon": "icon/icon.ico"
+    {
+      "from": "src/main/static",
+      "to": "static",
+      "filter": ["**/*"]
     },
-    "win": {
-        "target": "nsis",
-        "extraFiles": [
-            {
-          "from": "XMagic/win/${arch}/platforms/",
-          "to": "./platforms",
-          "filter": [
-            "**/*"
-          ]
-        },
-        {
-          "from": "XMagic/win/res/",
-          "to": "./resources/app.asar.unpacked/node_modules/xmagic-plugin-win-res",
-          "filter": [
-            "**/*"
-          ]
-        },
-        {
-          "from": "XMagic/win/${arch}/",
-          "to": "./resources/app.asar.unpacked/node_modules/xmagic-plugin-win-${arch}",
-          "filter": [
-            "*"
-          ]
-        },
-        {
-          "from": "XMagic/plugin_x",
-          "to": "./resources/app.asar.unpacked/node_modules/xmagic-plugin-x",
-          "filter": [
-            "**/*"
-          ]
-        }
-        ]
-    },
-    "linux":  {
-        "target": ["snap"],
-        "icon": "icon/icon.svg"
-    },
-    "mac": {
-        "icon": "icon/icon.icns"
-    },
-    "files": [
-        {
-            "from": "build/main",
-            "to": "main",
-            "filter": ["**/*"]
-        },
-        {
-            "from": "build/renderer",
-            "to": "renderer",
-            "filter": ["**/*"]
-        },
-        {
-            "from": "src/main/static",
-            "to": "static",
-            "filter": ["**/*"]
-        },
-	"!build",
+    "!build",
     "!src",
     "!cache",
     "!lib",
