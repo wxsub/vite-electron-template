@@ -4,7 +4,7 @@ import {
   createRouter,
   RouteLocationNormalized,
   NavigationGuardNext,
-  createWebHistory
+  createWebHashHistory
 } from 'vue-router'
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
@@ -14,7 +14,7 @@ NProgress.configure({ showSpinner: false })
 const routes = setupLayouts(generatedRoutes);
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   scrollBehavior: () => ({ left: 0, top: 0 })
 })

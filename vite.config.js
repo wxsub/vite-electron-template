@@ -52,14 +52,14 @@ const config = defineConfig({
     plugins: [
         vuePlugin(),
         Pages({
-            dirs: 'src/renderer/pages',
+            dirs: 'pages',
             extensions: ['vue'],
             routeStyle: 'nuxt',
             importMode: "sync",
             exclude: ['**/components/*.vue']
         }),
         Layouts({
-            target: 'src/renderer/Layouts',
+            target: 'Layouts',
             defaultLayout: 'default'
         }),
         AutoImport({

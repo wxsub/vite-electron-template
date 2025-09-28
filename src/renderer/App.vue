@@ -2,8 +2,8 @@
 import { ElConfigProvider } from "element-plus";
 import { useAppStore } from "@/store/modules/app";
 
-const appStore = useAppStore(),
-    showLoading = ref(false);
+const showLoading = ref(false);
+const appStore = useAppStore();
 
 onMounted(async () => {
   const loadingElement = document.getElementById("splash-loading");
