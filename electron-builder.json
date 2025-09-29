@@ -5,6 +5,11 @@
     "output": "dist"
   },
   "icon": "icon/icon.ico",
+  "publish": {
+    "provider": "github",
+    "owner": "wxsub",
+    "repo": "vite-electron-template"
+  },
   "electronDownload": {
     "cache": "./cache",
     "mirror": "https://npmmirror.com/mirrors/electron/"

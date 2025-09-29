@@ -49,6 +49,6 @@ const minimize = () => {
 };
 
 const close = () => {
-  window.electron.ipcRenderer.send("close");
+  window.electron.ipcRenderer.send("quit");
 };
 </script>
